@@ -13,7 +13,7 @@ import Home from './Components/Pages/Home.jsx';
 import Coffees from './Components/Pages/Coffees.jsx';
 import Dashbord from './Components/Pages/Dashbord.jsx';
 import CoffeeeeCard from './Components/Navber/CoffeeeeCard.jsx';
-import AllCard from './Components/Pages/AllCard.jsx';
+// import AllCard from './Components/Pages/AllCard.jsx';
 import SingleCard from './Components/Pages/SingleCard.jsx';
 
 
@@ -42,18 +42,17 @@ const router = createBrowserRouter([
         ]
        
       },
+     
       {
-        path:'/allcard',
-        element:<AllCard></AllCard>,
-        loader: ()=> fetch('../coffees.json'),
-      },
-      {
-        path:'/singlecard',
-        element:<SingleCard></SingleCard>
+        path:'/coffee/:id',
+        element:<SingleCard></SingleCard>,
+        loader: ()=>fetch('../coffees.json'),
+
       },
       {
         path:'/coffees',
-        element:<Coffees></Coffees>
+        element:<Coffees></Coffees>,
+        loader: ()=> fetch('../coffees.json'),
       },
       {
         path:'/dashbord',

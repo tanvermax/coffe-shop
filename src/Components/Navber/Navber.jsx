@@ -1,10 +1,10 @@
 // import React from 'react';
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navber = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar px-28 backdrop-blur-xl bg-white/30 z-50 sticky top-0 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,9 +42,30 @@ const Navber = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-8">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/coffees"}>Coffee</Link>
-          <Link to={"/dashbord"}>Dashbord</Link>
+          <NavLink
+            className={({ isActive }) =>
+              ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+            to={"/"}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+            to={"/coffees"}
+          >
+            Coffee
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              ` font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+            }
+            to={"/dashbord"}
+          >
+            Dashbord
+          </NavLink>
         </ul>
       </div>
     </div>

@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 
 const Card = ({coffee}) => {
 
- const {name,image,category,origin,rating,popularity,type} = coffee || {};
+ const {name,image,category,origin,rating,popularity,type,id} = coffee || {};
     
   return (
-    <Link to={'/singlecard'}><div className="card bg-base-100 w-96 shadow-xl">
+    <Link to={`/coffee/${id}`}>
+        <div className="transition hover:scale-105 card bg-base-100 w-96 shadow-xl">
     <figure>
       <img
         src={image}
